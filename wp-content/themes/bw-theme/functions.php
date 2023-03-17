@@ -12,3 +12,5 @@ function add_scripts_and_styles()
 }
 
 add_action('wp_enqueue_scripts', 'add_scripts_and_styles');
+
+add_theme_support('custom-logo');
