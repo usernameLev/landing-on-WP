@@ -17,37 +17,44 @@
 <div class="team" id="team">
   <div class="container">
     <div class="block__head">
-      <h2 class="block__title">This is our team</h2>
-      <p class="block__text">We are small but effective and ...</p>
+      <h2 class="block__title"><?php echo CFS()->get('team_title'); ?></h2>
+      <p class="block__text"><?php echo CFS()->get('team_desc'); ?></p>
     </div>
     <div class="team__inner">
-      <div class="team__item">
-        <img class="team__item-img" src="img/team1.png" alt="">
-        <h3 class="team__item-title">Mark Once</h3>
-        <p class="team__item-text">Designer & Front-End Developer</p>
-        <div class="team__icon-box">
-          <a href="#"><i class="icon-twitter"></i></a>
-          <a href="#"><i class="icon-instagram"></i></a>
+
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <?php $loop = CFS()->get('team_card'); ?>
+          <?php foreach ($loop as $row) : ?>
+            <div class="swiper-slide">
+              <div class="team__item">
+                <img class="team__item-img" src="<?php echo $row['team_img']; ?>" alt="">
+                <h3 class="team__item-title"><?php echo $row['team_name']; ?></h3>
+                <p class="team__item-text"><?php echo $row['team_post']; ?></p>
+                <div class="team__icon-box">
+                  <?php if (!empty($row['team_twitter']['url'])) : ?>
+                    <a href="<?php echo $row['team_twitter']['url']; ?>" target="<?php echo $row['team_twitter']['target']; ?>"><i class="icon-twitter"></i></a>
+                  <?php endif; ?>
+                  <?php if (!empty($row['team_insta']['url'])) : ?>
+                    <a href="<?php echo $row['team_insta']['url']; ?>" target="<?php echo $row['team_insta']['target']; ?>"><i class="icon-instagram"></i></a>
+                  <?php endif; ?>
+                  <?php if (!empty($row['team_vk']['url'])) : ?>
+                    <a href="<?php echo $row['team_vk']['url']; ?>" target="<?php echo $row['team_vk']['target']; ?>"><i class="icon-vkontakte"></i></a>
+                  <?php endif; ?>
+                  <?php if (!empty($row['team_fb']['url'])) : ?>
+                    <a href="<?php echo $row['team_fb']['url']; ?>" target="<?php echo $row['team_fb']['target']; ?>"><i class="icon-facebook"></i></a>
+                  <?php endif; ?>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; ?>
         </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
-      <div class="team__item">
-        <img class="team__item-img" src="img/team2.png" alt="">
-        <h3 class="team__item-title">Justin Twice</h3>
-        <p class="team__item-text">Founder & CEO</p>
-        <div class="team__icon-box">
-          <a href="#"><i class="icon-twitter"></i></a>
-          <a href="#"><i class="icon-instagram"></i></a>
-        </div>
-      </div>
-      <div class="team__item">
-        <img class="team__item-img" src="img/team3.png" alt="">
-        <h3 class="team__item-title">Antonio Never</h3>
-        <p class="team__item-text">Someone & Somewhere</p>
-        <div class="team__icon-box">
-          <a href="#"><i class="icon-twitter"></i></a>
-          <a href="#"><i class="icon-instagram"></i></a>
-        </div>
-      </div>
+
+
     </div>
   </div>
 </div>
