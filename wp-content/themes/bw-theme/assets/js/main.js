@@ -19,4 +19,15 @@ jQuery(document).ready(function ($) {
     $('.menu__mobile .menu').toggle(500);
     $(this).toggleClass('close');
   });
+
+  // Swiper
+  let swiper = new Swiper('.mySwiper', {
+    slidesPerView: 3,
+    slidesPerGroup: 3,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 });
