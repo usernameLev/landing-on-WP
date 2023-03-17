@@ -2,11 +2,11 @@
 function add_scripts_and_styles()
 {
   wp_deregister_script('jquery');
-  wp_register_script('jquery', get_template_directory_uri() . 'assets/js/jquery-3.5.1.min.js', false, false, true);
+  wp_register_script('jquery', get_template_directory_uri() . '/assets/js/jquery-3.5.1.min.js', false, false, true);
   wp_enqueue_script('jquery');
-  wp_enqueue_script('main', get_template_directory_uri() . 'assets/js/main.js', array('jquery'), false, true);
+  wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), false, true);
 
-  wp_enqueue_style('fontello', get_template_directory_uri() . 'assets/css/fontello.css');
+  wp_enqueue_style('fontello', get_template_directory_uri() . '/assets/css/fontello.css');
   // get_stylesheet_uri() подключает, когда файл находится в корне
   wp_enqueue_style('style', get_stylesheet_uri(), array('fontello'));
 }

@@ -15,7 +15,7 @@
     <div class="container">
       <nav class="menu__desktop">
         <ul class="menu">
-          <li class="menu__item active"><a href="#">Home</a></li>
+          <li class="menu__item active"><a href="<?php echo home_url('/') ?>">Home</a></li>
           <li class="menu__item"><a href="#about">About Us</a></li>
           <li class="menu__item"><a href="#team">Team</a></li>
           <li class="menu__item"><?php the_custom_logo(); ?></li>
@@ -30,7 +30,7 @@
           <div class="menu__burger"><span>toggle menu</span></div>
         </div>
         <ul class="menu">
-          <li class="menu__item active"><a href="#">Home</a></li>
+          <li class="menu__item active"><a href="<?php echo home_url('/') ?>">Home</a></li>
           <li class="menu__item"><a href="#about">About Us</a></li>
           <li class="menu__item"><a href="#team">Team</a></li>
           <li class="menu__item"><a href="#provide">Services</a></li>
@@ -39,9 +39,9 @@
         </ul>
       </nav>
       <div class="header__content">
-        <h1 class="header__title">We build it with passion</h1>
-        <p class="header__text">Just to be clear, we do this for fun not for you, just kidding.</p>
-        <a href="" class="header__button">READ MORE</a>
+        <h1 class="header__title"><?php echo CFS()->get('header_title'); ?></h1>
+        <p class="header__text"><?php echo CFS()->get('header_slogan'); ?></p>
+        <a href="#about" class="header__button"><?php echo CFS()->get('header_button'); ?></a>
       </div>
     </div>
   </header>

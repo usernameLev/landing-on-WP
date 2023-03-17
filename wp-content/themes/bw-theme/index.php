@@ -1,32 +1,16 @@
 <?php get_header(); ?>
 
 
-<div class="about" id="about">
+<div class="about" id="about" style="background: url(<?php echo CFS()->get('background_white') ?>) center 100% repeat-x, url(<?php echo CFS()->get('background_black') ?>) center 100% repeat-x, #1d1d1d;">
   <div class="container">
     <div class="about__inner">
-      <div class="about__item">
-        <div class="about__year">2011</div>
-        <div class="about__text">Lorem ipsum dolor sit amet, consectetur adipiselit. Vivamus varius nec diam
-          vitae hendrerit bigus mit.</div>
-      </div>
-      <div class="about__item">
-        <div class="about__year">2012</div>
-        <div class="about__text">Lorem ipsum dolor sit amet, consectetur adipiselit. Vivamus varius nec diam
-          vitae hendrerit bigus mit.
-          Begitus vit urna nulla.</div>
-      </div>
-      <div class="about__item">
-        <div class="about__year">2013</div>
-        <div class="about__text">Sed at auctor sem, nec tincidunt elit. Pellentesque enim turpis, porttitor
-          ac orci in, ultrices efficitur nisl. Ut odio libero, sodales a tellus eleifend, suscipit dapibus
-          mi.</div>
-      </div>
-      <div class="about__item">
-        <div class="about__year">2014</div>
-        <div class="about__text">Lorem ipsum dolor sit amet, consectetur adipiselit. Vivamus varius nec diam
-          vitae hendrerit bigus mit.
-          Begitus vit urna nulla.</div>
-      </div>
+      <?php $loop = CFS()->get('card'); ?>
+      <?php foreach ($loop as $row) : ?>
+        <div class="about__item">
+          <div class="about__year"><?php echo $row['card_year']; ?></div>
+          <div class="about__text"><?php echo $row['card_text']; ?></div>
+        </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </div>
