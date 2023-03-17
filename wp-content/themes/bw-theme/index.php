@@ -4,9 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/fontello.css">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Document</title>
+  <title>Landging on WP</title>
 
   <?php wp_head(); ?>
 </head>
@@ -175,9 +173,6 @@
       </div>
     </div>
   </div>
-
-  <script src="js/jquery-3.5.1.min.js"></script>
-  <script src="js/main.js"></script>
 
   <?php wp_footer(); ?>
 </body>
